@@ -5,6 +5,13 @@
         Console.WriteLine("Bienvenido a la plataforma de Streaming");
 
         int opcion;
+        int totalevaluados = 0;
+        int totalpublicados = 0;
+        int totalrechazados = 0;
+        int totalrevision = 0;
+        int impactobajo = 0;
+        int impactomedio = 0;
+        int impactoalto = 0;
 
         do
         {
@@ -137,11 +144,11 @@
                             impacto = "Medio";
                         }
                         else //Impacto bajo
-                        { 
+                        {
                             impacto = "Bajo";
                         }
                         Console.WriteLine("Impacto: " + impacto);
-                        }
+                    }
                     //Decisión final
                     if (impacto == "Alto")
                     {
@@ -150,6 +157,32 @@
                     else if (impacto == "Medio" || impacto == "Bajo")
                     {
                         Console.WriteLine("Decision: Aprobado para publicar");
+                    }
+
+                    //Actualizar estadisticas
+                    totalevaluados++;
+
+                    if (aprobado)
+                    {
+                        totalpublicados++;
+                    }
+                    else
+                    {
+                        totalrechazados++;
+                    }
+
+                    if (impacto == "alto")
+                    {
+                        impactoalto++;
+                        totalrevision++;
+                    }
+                    else if (impacto == "Medio")
+                    {
+                        impactomedio++;
+                    }
+                    else if (impacto == "Bajo")
+                    {
+                        impactobajo++;
                     }
 
                     break;
