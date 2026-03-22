@@ -19,7 +19,8 @@
             {
                 case 1:
                     int tipo, duracion, clasificacion, hora, produccion;
-
+                    //Entrada de datos
+              //1
                     Console.WriteLine("Tipo de contenido:");
                     Console.WriteLine("1. Pelicula");
                     Console.WriteLine("2. Serie");
@@ -29,7 +30,7 @@
 
                     Console.WriteLine("Duracion en minutos:");
                     duracion = int.Parse(Console.ReadLine());
-
+               //2
                     Console.WriteLine("Clasificacion:");
                     Console.WriteLine("1. Todo publico");
                     Console.WriteLine("2. +13");
@@ -38,7 +39,7 @@
 
                     Console.WriteLine("Hora de visualizacion (0-23):");
                     hora = int.Parse(Console.ReadLine());
-
+            //3
                     Console.WriteLine("Nivel de produccion:");
                     Console.WriteLine("1. Bajo");
                     Console.WriteLine("2. Medio");
@@ -123,6 +124,23 @@
                         Console.WriteLine("Rechazado ");
                     }
 
+                    //CLASIFICACIÓN DE IMPACTO
+                    if (aprobado)
+                    {  
+                        if (produccion == 3 || duracion > 120 || (hora >= 20 && hora <= 23))
+                        {
+                            Console.WriteLine("Impacto: Alto");
+                        }
+                        else if (produccion == 2 || (duracion > 60 && duracion <= 120))
+                        { 
+                            Console.WriteLine("Impacto: Medio");
+                        }
+                        else 
+                        { 
+                            Console.WriteLine("Impacto: Bajo");
+                        }
+                    }
+ 
                     break;
                 case 2:
                     Console.WriteLine("Mostrando reglas...");
