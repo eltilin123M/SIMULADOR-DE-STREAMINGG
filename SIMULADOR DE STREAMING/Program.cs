@@ -76,6 +76,32 @@
                         }
                     }
 
+                    if (tipo == 2)
+                    {
+                        if (duracion < 20 || duracion > 90)
+                        {
+                            aprobado = false;
+                            Console.WriteLine("Error: Series deben durar entre 20 y 90 minutos");
+                        }
+                    }
+
+                    if (tipo == 3)
+                    {
+                        if (duracion < 30 || duracion > 120)
+                        {
+                            aprobado = false;
+                            Console.WriteLine("Error: Documentales deben durar entre 30 y 120 minutos");
+                        }
+                    }
+
+                    if (tipo == 4)
+                    {
+                        if (duracion < 30 || duracion > 240)
+                        {
+                            aprobado = false;
+                            Console.WriteLine("Error: Eventos en vivo deben durar entre 30 y 240 minutos");
+                        }
+                    }
                     break;
                 case 2:
                     Console.WriteLine("Mostrando reglas...");
