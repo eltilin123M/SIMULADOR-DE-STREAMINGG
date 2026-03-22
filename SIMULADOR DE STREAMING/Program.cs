@@ -18,7 +18,7 @@
             switch (opcion)
             {
                 case 1:
-                    Console.WriteLine("Evaluando contenido...");
+                    Console.WriteLine("Evaluando contenido..");
                     break;
                 case 2:
                     Console.WriteLine("Mostrando reglas...");
