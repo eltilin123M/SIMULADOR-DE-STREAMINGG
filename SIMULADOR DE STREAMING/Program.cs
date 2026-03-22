@@ -19,8 +19,9 @@
             {
                 case 1:
                     int tipo, duracion, clasificacion, hora, produccion;
+                    string impacto = "";
                     //Entrada de datos
-              //1
+                    //1
                     Console.WriteLine("Tipo de contenido:");
                     Console.WriteLine("1. Pelicula");
                     Console.WriteLine("2. Serie");
@@ -30,7 +31,7 @@
 
                     Console.WriteLine("Duracion en minutos:");
                     duracion = int.Parse(Console.ReadLine());
-               //2
+                    //2
                     Console.WriteLine("Clasificacion:");
                     Console.WriteLine("1. Todo publico");
                     Console.WriteLine("2. +13");
@@ -39,7 +40,7 @@
 
                     Console.WriteLine("Hora de visualizacion (0-23):");
                     hora = int.Parse(Console.ReadLine());
-            //3
+                    //3
                     Console.WriteLine("Nivel de produccion:");
                     Console.WriteLine("1. Bajo");
                     Console.WriteLine("2. Medio");
@@ -125,22 +126,32 @@
                     }
 
                     //CLASIFICACIÓN DE IMPACTO
-                    if (aprobado)
-                    {  
+                    if (aprobado) //impacto alto
+                    {
                         if (produccion == 3 || duracion > 120 || (hora >= 20 && hora <= 23))
                         {
-                            Console.WriteLine("Impacto: Alto");
+                            impacto = "Alto";
                         }
-                        else if (produccion == 2 || (duracion > 60 && duracion <= 120))
+                        else if (produccion == 2 || (duracion > 60 && duracion <= 120)) //Impacto medio
+                        {
+                            impacto = "Medio";
+                        }
+                        else //Impacto bajo
                         { 
-                            Console.WriteLine("Impacto: Medio");
+                            impacto = "Bajo";
                         }
-                        else 
-                        { 
-                            Console.WriteLine("Impacto: Bajo");
+                        Console.WriteLine("Impacto: " + impacto);
                         }
+                    //Decisión final
+                    if (impacto == "Alto")
+                    {
+                        Console.WriteLine("Decision: Enviar a revision");
                     }
- 
+                    else if (impacto == "Medio" || impacto == "Bajo")
+                    {
+                        Console.WriteLine("Decision: Aprobado para publicar");
+                    }
+
                     break;
                 case 2:
                     Console.WriteLine("Mostrando reglas...");
