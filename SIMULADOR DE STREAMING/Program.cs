@@ -18,7 +18,64 @@
             switch (opcion)
             {
                 case 1:
-                    Console.WriteLine("Evaluando contenido..");
+                    int tipo, duracion, clasificacion, hora, produccion;
+
+                    Console.WriteLine("Tipo de contenido:");
+                    Console.WriteLine("1. Pelicula");
+                    Console.WriteLine("2. Serie");
+                    Console.WriteLine("3. Documental");
+                    Console.WriteLine("4. Eveneto en vivo");
+                    tipo = int.Parse(Console.ReadLine());
+
+                    Console.WriteLine("Duracion en minutos:");
+                    duracion = int.Parse(Console.ReadLine());
+
+                    Console.WriteLine("Clasificacion:");
+                    Console.WriteLine("1. Todo publico");
+                    Console.WriteLine("2. +13");
+                    Console.WriteLine("3. +18");
+                    clasificacion = int.Parse(Console.ReadLine());
+
+                    Console.WriteLine("Hora de visualizacion (0-23):");
+                    hora = int.Parse(Console.ReadLine());
+
+                    Console.WriteLine("Nivel de produccion:");
+                    Console.WriteLine("1. Bajo");
+                    Console.WriteLine("2. Medio");
+                    Console.WriteLine("3. Alto");
+                    produccion = int.Parse(Console.ReadLine());
+
+                    bool aprobado = true;
+
+                    //Regla de horario
+                    if (clasificacion == 2)
+                    {
+                        if (hora < 6 || hora > 22)
+                        {
+                            aprobado = false;
+                            Console.WriteLine("Error: +13 solo entre 6 y 22 horas");
+                        }
+                    }
+
+                    if (clasificacion == 3)
+                    {
+                        if (hora >= 6 && hora <= 21)
+                        {
+                            aprobado = false;
+                            Console.WriteLine("Error: +18 solo entre 22 y 5 horas");
+                        }
+                    }
+
+                    //Regla de duracion - De pelicula
+                    if (tipo == 1)
+                    {
+                        if (duracion < 60 || duracion > 180)
+                        {
+                            aprobado = false;
+                            Console.WriteLine("Error: Peliculas deben durar entre 60 y 180 minutos");
+                        }
+                    }
+
                     break;
                 case 2:
                     Console.WriteLine("Mostrando reglas...");
