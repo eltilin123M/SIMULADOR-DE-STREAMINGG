@@ -24,7 +24,7 @@
                     Console.WriteLine("1. Pelicula");
                     Console.WriteLine("2. Serie");
                     Console.WriteLine("3. Documental");
-                    Console.WriteLine("4. Eveneto en vivo");
+                    Console.WriteLine("4. Evento en vivo");
                     tipo = int.Parse(Console.ReadLine());
 
                     Console.WriteLine("Duracion en minutos:");
@@ -76,6 +76,7 @@
                         }
                     }
 
+                    //Duracion de series
                     if (tipo == 2)
                     {
                         if (duracion < 20 || duracion > 90)
@@ -85,6 +86,7 @@
                         }
                     }
 
+                    //duracion de documentales
                     if (tipo == 3)
                     {
                         if (duracion < 30 || duracion > 120)
@@ -94,6 +96,7 @@
                         }
                     }
 
+                    //duracion de eventos en vivo
                     if (tipo == 4)
                     {
                         if (duracion < 30 || duracion > 240)
@@ -102,6 +105,24 @@
                             Console.WriteLine("Error: Eventos en vivo deben durar entre 30 y 240 minutos");
                         }
                     }
+
+                    //Regla de produccion
+                    if (produccion == 1 && clasificacion == 3)
+                    {
+                        aprobado = false;
+                        Console.WriteLine("Error: Produccion baja no permitida para +18");
+                    }
+
+                    //Resultado
+                    if (aprobado)
+                    {
+                        Console.WriteLine("Aprobado");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Rechazado ");
+                    }
+
                     break;
                 case 2:
                     Console.WriteLine("Mostrando reglas...");
