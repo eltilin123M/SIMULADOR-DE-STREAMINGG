@@ -226,8 +226,18 @@
                     Console.WriteLine("Estadisticas reiniciadas");
                     break;
 
+                // Este case muestra un resumen final de las estadisticas y un mensaje de despedida
                 case 5:
-                    
+                    Console.WriteLine(" Resumen Final ");
+                    Console.WriteLine("Estadisticas:");
+                    Console.WriteLine("Total evaluados: " + totalevaluados);
+                    Console.WriteLine("Total publicados: " + totalpublicados);
+                    Console.WriteLine("Total rechazados: " + totalrechazados);
+                    Console.WriteLine("Total en revision: " + totalrevision);
+                    Console.WriteLine("Impacto alto: " + impactoalto);
+                    Console.WriteLine("Impacto medio: " + impactomedio);
+                    Console.WriteLine("Impacto bajo: " + impactobajo);
+                    Console.WriteLine("Hasta pronto!");
                     break;
                 default:
                     Console.WriteLine("Opcion no valida");
