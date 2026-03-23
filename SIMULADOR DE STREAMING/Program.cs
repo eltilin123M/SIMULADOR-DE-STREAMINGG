@@ -2,7 +2,7 @@
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Bienvenido a la plataforma de Streaming");
+        Console.WriteLine("Bienvenido al Simulador de plataforma de Streaming");
 
         int opcion;
         int totalevaluados = 0;
@@ -15,11 +15,11 @@
 
         do
         {
-            Console.WriteLine("1. Evaluar contenido");
+            Console.WriteLine("1. Evaluar el contenido");
             Console.WriteLine("2. Ver reglas");
             Console.WriteLine("3. Ver estadisticas");
             Console.WriteLine("4. Reiniciar estadisticas");
-            Console.WriteLine("5. Salir");
+            Console.WriteLine("5. Salir...");
             opcion = int.Parse(Console.ReadLine());
 
             switch (opcion)
@@ -41,8 +41,8 @@
                     //2
                     Console.WriteLine("Clasificacion:");
                     Console.WriteLine("1. Todo publico");
-                    Console.WriteLine("2. +13");
-                    Console.WriteLine("3. +18");
+                    Console.WriteLine("2. +13 años");
+                    Console.WriteLine("3. +18 años");
                     clasificacion = int.Parse(Console.ReadLine());
 
                     Console.WriteLine("Hora de visualizacion (0-23):");
@@ -149,7 +149,7 @@
                         }
                         Console.WriteLine("Impacto: " + impacto);
                     }
-                    //Decisión final
+                    //Decisión final 
                     if (impacto == "Alto")
                     {
                         Console.WriteLine("Decision: Enviar a revision");
@@ -159,7 +159,7 @@
                         Console.WriteLine("Decision: Aprobado para publicar");
                     }
 
-                    //Actualizar estadisticas
+                    //ACTUALIZAR LAS ESTADISTICAS
                     totalevaluados++;
 
                     if (aprobado)
@@ -171,7 +171,7 @@
                         totalrechazados++;
                     }
 
-                    if (impacto == "alto")
+                    if (impacto == "Alto")
                     {
                         impactoalto++;
                         totalrevision++;
@@ -184,10 +184,22 @@
                     {
                         impactobajo++;
                     }
-
                     break;
+
                 case 2:
-                    Console.WriteLine("Mostrando reglas...");
+                    Console.WriteLine("Reglas de evaluacion:");
+                    Console.WriteLine("Horarios:"); 
+                    Console.WriteLine(" Todo publico: Sin restricciones de horario");
+                    Console.WriteLine(" +13 años: Solo entre 6 y 22 horas");
+                    Console.WriteLine(" +18: entre 22 y 5 horas");
+                    Console.WriteLine("Duracion:");
+                    Console.WriteLine(" Peliculas: entre 60 a 180 minutos");
+                    Console.WriteLine(" Series: entre 20 a 90 minutos");
+                    Console.WriteLine(" Documentales: entre 30 a 120 minutos");
+                    Console.WriteLine(" Eventos en vivo: entre 30 a 240 minutos");
+                    Console.WriteLine("Produccion:");
+                    Console.WriteLine(" Baja: Solo para todo publico o +13");
+                    Console.WriteLine(" Media y Alta: Cualquier clasificacion");
                     break;
                 case 3:
                     Console.WriteLine("Mostrando estadisticas...");
