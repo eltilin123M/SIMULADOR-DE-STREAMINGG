@@ -186,6 +186,7 @@
                     }
                     break;
 
+                    //Todas son las reglas de horarios
                 case 2:
                     Console.WriteLine("Reglas de evaluacion:");
                     Console.WriteLine("Horarios:"); 
@@ -201,14 +202,32 @@
                     Console.WriteLine(" Baja: Solo para todo publico o +13");
                     Console.WriteLine(" Media y Alta: Cualquier clasificacion");
                     break;
+
+                //Este case muestra las estadisticas del programa
                 case 3:
-                    Console.WriteLine("Mostrando estadisticas...");
+                    Console.WriteLine("Estadisticas:");
+                    Console.WriteLine("Total evaluados: " + totalevaluados);
+                    Console.WriteLine("Total publicados: " + totalpublicados);
+                    Console.WriteLine("Total rechazados: " + totalrechazados);
+                    Console.WriteLine("Total en revision: " + totalrevision);
+                    Console.WriteLine("Impacto alto: " + impactoalto);
+                    Console.WriteLine("Impacto medio: " + impactomedio);
+                    Console.WriteLine("Impacto bajo: " + impactobajo);
                     break;
+                // Reiniciar estadisticas del programa y pone todas las variables en 0 otra vez
                 case 4:
-                    Console.WriteLine("Reiniciando estadisticas...");
+                    totalevaluados = 0;
+                    totalpublicados = 0;
+                    totalrechazados = 0;
+                    totalrevision = 0;
+                    impactobajo = 0;
+                    impactomedio = 0;
+                    impactoalto = 0;
+                    Console.WriteLine("Estadisticas reiniciadas");
                     break;
+
                 case 5:
-                    Console.WriteLine("Hasta pronto!");
+                    
                     break;
                 default:
                     Console.WriteLine("Opcion no valida");
